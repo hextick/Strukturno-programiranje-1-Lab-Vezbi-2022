@@ -9,24 +9,25 @@
 //Дополнително: Направете ја функцијата containsDigits рекурзивна.
 
 int reverseNumber(int num){
-    int c=0;
+    int broj=0;
     while(num){
-        c=c*10+num%10;
+        broj=broj*10+num%10;
         num/=10;
     }
-    return c;
+    return broj;
 }
 
 int containDigits(int num){
-    if(num==0) return 1;
-    if(num%10>4) return 0;
+    if(num==0) 
+        return 1;
+    if(num%10>4) 
+        return 0;
     return containDigits(num/10);
 }
 void isPalindrome(int num){
-    if(num == reverseNumber(num) && containDigits(num))
+    if(num==reverseNumber(num) && containDigits(num))
         printf("%d\n",num);
 }
-
 int main() {
     int a,b;
     scanf("%d %d",&a, &b);
